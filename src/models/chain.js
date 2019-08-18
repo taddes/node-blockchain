@@ -1,5 +1,5 @@
 const Block = require('./block');
-const actions = require('./constants');
+const actions = require('../constants');
 const { generateProof, isProofValid } = require('../utils/proof');
 
 class Blockchain {

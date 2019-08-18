@@ -4,7 +4,10 @@
   "description": "A blockchain model built using node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2 startOrReload ecosystem.json --update-env && npm run logs",
+    "logs": "pm2 logs",
+    "kill": "pm2 flush && pm2 kill",
+    "flush": "pm2 flush"
   },
   "keywords": [
     "Blockchain"
@@ -12,7 +15,12 @@
   "author": "Taddes Korris",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
     "crypto": "^1.0.1",
-    "socket.io": "^2.2.0"
+    "express": "^4.17.1",
+    "pm2": "^3.5.1",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
   }
 }
