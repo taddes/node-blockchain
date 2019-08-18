@@ -10,5 +10,9 @@
     "Blockchain"
   ],
   "author": "Taddes Korris",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "socket.io": "^2.2.0"
+  }
 }
