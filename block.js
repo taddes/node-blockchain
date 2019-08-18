@@ -35,6 +35,32 @@ class Block {
     return this.previousBlockHash;
   }
 
+  getDetails() {
+    const { index, proof, getPreviousBlockHash, transactions, timestamp } = this;
+    return {
+      index,
+      proof,
+      timestamp,
+      previousBlockHash,
+      transactions: transactions.map(transaction => transaction.getDetails())
+    };
+  }
+
+  parseBlock(block) {
+    this.index = block.index;
+    this.proof = block.proof;
+    this.previousBlockHash = block.previousBlockHash;
+    this.timestamp = block.timestamp;
+    this.transactions = block.transactions.map(transaction => {
+      const parsedTransaction = new Transaction();
+      parsedTransaction.parsedTransaction(transaction);
+      return parsedTransaction;
+    });
+  }
+
+  printTransactions() {
+    this.transactions.forEach(transaction => console.log({transaction}));
+  }
 }
 
 module.exports = Block;
