@@ -60,7 +60,7 @@ class Blockchain {
     return true
   }
 
-  praseChain(blocks) {
+  parseChain(blocks) {
     this.blocks = blocks.map(block => {
       const parsedBlock = new Block(0);
       parsedBlock.parseBlock(block);

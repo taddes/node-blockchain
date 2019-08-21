@@ -36,7 +36,7 @@ class Block {
   }
 
   getDetails() {
-    const { index, proof, getPreviousBlockHash, transactions, timestamp } = this;
+    const { index, proof, previousBlockHash, transactions, timestamp } = this;
     return {
       index,
       proof,
@@ -53,7 +53,7 @@ class Block {
     this.timestamp = block.timestamp;
     this.transactions = block.transactions.map(transaction => {
       const parsedTransaction = new Transaction();
-      parsedTransaction.parsedTransaction(transaction);
+      parsedTransaction.parseTransaction(transaction);
       return parsedTransaction;
     });
   }

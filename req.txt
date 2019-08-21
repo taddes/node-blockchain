@@ -1,0 +1,32 @@
+http://localhost:5000/nodes
+{
+  "host": "localhost",
+  "port": 5001
+}
+
+
+http://localhost:5000/transaction
+{
+  "sender": "Taddes",
+  "receiver": "Pepper",
+  "amount": 10
+}
+{
+  "sender": "Taddes",
+  "receiver": "Sarah",
+  "amount": 4
+}
+
+{
+  "sender": "Sarah",
+  "receiver": "Taddes",
+  "amount": 1
+}
+{
+  "sender": "Sarah",
+  "receiver": "Pepper",
+  "amount": 2
+}
+
+
+http://localhost:5000/chain
